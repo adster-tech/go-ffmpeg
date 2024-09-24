@@ -31,7 +31,7 @@ FFMPEG wrapper written in GO
 ## Installation
 Install the package with the following command:
 ```shell
-go get github.com/xfrr/goffmpeg
+go get github.com/adster-tech/go-ffmpeg
 ```
 
 ## Usage

@@ -1,4 +1,4 @@
-package goffmpeg
+package config
 
 import (
 	"context"
@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/xfrr/goffmpeg/pkg/cmd"
+	"github.com/adster-tech/go-ffmpeg/pkg/cmd"
 )
 
 const (

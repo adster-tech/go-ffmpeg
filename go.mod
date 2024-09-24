@@ -1,4 +1,4 @@
-module github.com/xfrr/goffmpeg
+module github.com/adster-tech/go-ffmpeg
 
 go 1.20
 

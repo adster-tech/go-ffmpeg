@@ -13,9 +13,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xfrr/goffmpeg"
-	"github.com/xfrr/goffmpeg/media"
-	"github.com/xfrr/goffmpeg/pkg/duration"
+	"github.com/adster-tech/go-ffmpeg/config"
+	"github.com/adster-tech/go-ffmpeg/media"
+	"github.com/adster-tech/go-ffmpeg/pkg/duration"
+
 )
 
 // Transcoder Main struct
@@ -24,7 +25,7 @@ type Transcoder struct {
 	stdStdinPipe       io.WriteCloser
 	process            *exec.Cmd
 	mediafile          *media.File
-	configuration      goffmpeg.Configuration
+	configuration      config.Configuration
 	whiteListProtocols []string
 }
 
@@ -49,7 +50,7 @@ func (t *Transcoder) SetMediaFile(v *media.File) {
 }
 
 // SetConfiguration Set the transcoding configuration
-func (t *Transcoder) SetConfiguration(v goffmpeg.Configuration) {
+func (t *Transcoder) SetConfiguration(v config.Configuration) {
 	t.configuration = v
 }
 
@@ -96,7 +97,7 @@ func (t *Transcoder) InitializeEmptyTranscoder() error {
 	var err error
 	cfg := t.configuration
 	if len(cfg.FFmpegBinPath()) == 0 || len(cfg.FFprobeBinPath()) == 0 {
-		cfg, err = goffmpeg.Configure(context.Background())
+		cfg, err = config.Configure(context.Background())
 		if err != nil {
 			return err
 		}
@@ -165,7 +166,7 @@ func (t *Transcoder) Initialize(inputPath string, outputPath string) error {
 	cfg := t.configuration
 
 	if len(cfg.FFmpegBinPath()) == 0 || len(cfg.FFprobeBinPath()) == 0 {
-		cfg, err = goffmpeg.Configure(context.Background())
+		cfg, err = config.Configure(context.Background())
 		if err != nil {
 			return err
 		}

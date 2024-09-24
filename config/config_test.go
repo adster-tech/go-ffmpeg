@@ -1,4 +1,4 @@
-package goffmpeg
+package config
 
 import (
 	"context"

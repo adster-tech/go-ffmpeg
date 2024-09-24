@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/xfrr/goffmpeg/transcoder"
+	"github.com/adster-tech/go-ffmpeg/transcoder"
 )
 
 const (
