@@ -19,6 +19,13 @@ type Configuration struct {
 	ffmpegBinPath  string
 }
 
+func NewConfiguration(ffprobeBinPath, ffmpegBinPath string) Configuration {
+	return Configuration{
+		ffprobeBinPath: ffprobeBinPath,
+		ffmpegBinPath:  ffmpegBinPath,
+	}
+}
+
 func (cfg Configuration) FFmpegBinPath() string {
 	return cfg.ffmpegBinPath
 }
